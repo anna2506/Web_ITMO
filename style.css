@@ -1,0 +1,97 @@
+*{
+    margin:  0;
+}
+
+html{
+    background-color: #a0daff;
+}
+
+.menu {
+    display: flex; 
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    /* выравнивание элементов по главной оси
+    Равномерно распределяет все элементы по ширине flex-блока.
+    Первый элемент вначале, последний в конце */
+    justify-content: space-between; 
+    /*управляет выравниванием элементов по перекрёстной оси.*/
+    align-items: center;
+    padding: 0 10px;
+    border-bottom: 1px solid black;
+}
+
+.menu >  * {
+    display: flex; 
+}
+
+.content{
+    position: fixed;
+    width: 100%;
+    top: 61px;
+}
+
+h1 {
+    margin: 0 10px;
+}
+
+.logo, .hamburger{
+    height: 60px;
+    width: 60px;
+    cursor: pointer;
+}
+
+.menu-right > *, .menu-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.menu-right > button{
+    background: none;
+    border: 3px solid black;
+    font-weight: bold;
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.menu-right > button:hover {
+    transition-duration: 0.3s;
+    background-color: black;
+    color: white;
+}
+
+.contacts{
+    background-color: #2173aa;
+    height: 100px;
+    width: 100%;
+    display: block;
+}
+
+.contacts > *{
+    color: white;
+    display: flex;
+    justify-content: space-between; 
+    flex: 1;
+
+}
+
+.contacts > div:first-child{
+    justify-content: center; 
+    font-size: 28pt;
+}
+
+.phone-logo, .email-logo, .telegram-logo{
+    height: 30px;
+    width: 30px;
+    margin: 0 150px;
+}
+
+.phone, .email, .telegram{
+    text-align: center;
+}
