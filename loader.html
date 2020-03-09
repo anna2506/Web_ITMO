@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <style type="text/css">
+            * {
+                background-color: #6B449B;
+            }
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            @keyframes jump {
+                0%, 100% {
+                    transform: translate(0,0);
+                }
+                50% {
+                    transform: translate(0,-30px);
+                }
+            }
+            
+            .ball {
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background: #F7B137;
+                animation: jump 1s ease-in-out infinite;
+            }
+            .wrapper {
+                width: 50px;
+                height: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+            }
+            .loading {
+                font-size: 48pt;
+                color: #F7B137;
+            }
+            .wrapper:nth-child(3) > .ball {
+                animation-delay: 0.333s;
+            }
+            .wrapper:last-child > .ball {
+                animation-delay: 0.6666s;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="loading">Loading</div>
+        <div class="wrapper">
+            <div class="ball"></div>
+        </div>
+        <div class="wrapper">
+            <div class="ball"></div>
+        </div>
+        <div class="wrapper">
+            <div class="ball"></div>
+        </div>
+    </body>
+</html>
