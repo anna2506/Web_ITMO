@@ -3,7 +3,7 @@
 }
 
 html{
-    background-color: #a0daff;
+    background-color: #DEF2F1;
 }
 
 .menu {
@@ -27,9 +27,9 @@ html{
 }
 
 .content{
-    position: fixed;
     width: 100%;
-    top: 61px;
+    margin-top: 61px;
+    overflow-y: auto;
 }
 
 h1 {
@@ -60,21 +60,20 @@ h1 {
     border-radius: 15px;
 }
 
-.menu-right > button:hover {
+button:hover {
     transition-duration: 0.3s;
     background-color: black;
     color: white;
 }
 
 .contacts{
-    background-color: #2173aa;
-    height: 100px;
+    background-color: #B9E1E0;
     width: 100%;
     display: block;
 }
 
 .contacts > *{
-    color: white;
+    color: black;
     display: flex;
     justify-content: space-between; 
     flex: 1;
@@ -94,4 +93,55 @@ h1 {
 
 .phone, .email, .telegram{
     text-align: center;
+}
+
+.strong{
+    color: #ECA411;
+    display: inline;
+}
+
+.first-page {
+    display: flex;
+    flex: 1 1;
+}
+
+.first-page > * {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.first-page > div > div > h1 {
+    font-size: 50pt;
+    width: 100%;
+}
+
+.get-started{
+    background-color: #82BABB;
+    border: none;
+    font-weight: bold;
+    width: 250px;
+    height: 60px;
+    cursor: pointer;
+    border-radius: 15px;
+    font-size: 20px;
+    position: absolute;
+    right: 15%;
+    bottom: 10%; 
+}
+
+.get-started:hover {
+    background-color: #E6B02A;
+}
+
+.small-text {
+    display: flex;
+}
+
+.small-text {
+    font-size: 20pt;
+    justify-content: flex-end;
+    margin: 20px 15px;
 }
