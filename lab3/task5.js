@@ -1,7 +1,7 @@
-var i = 0
 function createCounter() {
+    this.i = 0;
     return function() {
-        return ++i;
+        return ++this.i;
     };
 }
 

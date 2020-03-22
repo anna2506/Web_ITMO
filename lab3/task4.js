@@ -2,10 +2,10 @@ function User(name) {
 	this.name = name;
 }
 
-const me = new User('Rex');
-me.getName = function(){
-    return me.name;
-};
+User.prototype.getName = function () {
+    return this.name;
+}
 
+const me = new User('Rex');
 
 console.log(me.getName()); // Rex
