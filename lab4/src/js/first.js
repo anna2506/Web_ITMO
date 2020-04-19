@@ -19,7 +19,7 @@ var start = function(){
     photo.style.margin = "10px";
     photo.style.display = "flex";
     photo.style.justifyContent = "center";
-    img.src = "images/me.jpg";
+    img.src = "images/me.JPG";
     img.style.borderRadius = "45%";
     photo.appendChild(img);
     document.body.appendChild(photo);
