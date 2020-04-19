@@ -1,9 +1,18 @@
-/*const second = require('second.js');
-module.exports = function render(){
-    return second.render();
-};*/
+const second = require('./second');
 
-function first(){
+var start = function(){
+    if (localStorage.id == 2){
+        while (document.body.firstElementChild)
+        {
+            document.body.removeChild(document.body.firstElementChild);
+        }
+        return second.render();
+    }
+    while (document.body.firstElementChild)
+    {
+        document.body.removeChild(document.body.firstElementChild);
+    }
+    localStorage.id = 1;
     document.body.setAttribute("style", "background: #9477e4; margin: 0; padding: 0");
     var photo = document.createElement('div');
     var img = document.createElement('img');
@@ -82,13 +91,15 @@ function first(){
     document.body.appendChild(button);
 
     click = pockemonButton.addEventListener("click", async function () {
+        second.render();
     });
 
-}
+};
 
-module.exports = () => {
-    return first();
-}
+start();
+
+module.exports.start = start;
+
 
 
 

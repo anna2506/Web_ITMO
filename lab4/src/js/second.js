@@ -1,5 +1,11 @@
+const first = require('./first');
 
-function render() {
+var render = function() {
+    localStorage.id = 2;
+    while (document.body.firstElementChild)
+    {
+        document.body.removeChild(document.body.firstElementChild);
+    }
     document.body.setAttribute("style", "background: #02ded3; margin: 0; padding: 0");
     var name = document.createElement('span');
     name.style.display = "flex";
@@ -108,12 +114,11 @@ function render() {
     document.body.appendChild(button);
 
     click = personalInfoButton.addEventListener("click", async function () {
-
+        localStorage.id = 1;
+        first.start();
     });
 
-}
+};
 
-render();
-module.exports = () => {
-    return render();
-}
+
+module.exports.render = render;
