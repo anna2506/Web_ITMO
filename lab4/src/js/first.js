@@ -15,12 +15,10 @@ export function start(){
     localStorage.id = 1;
     document.body.setAttribute("style", "background: #9477e4; margin: 0; padding: 0");
     let photo = document.createElement('div');
+    photo.className = 'photo';
     let img = document.createElement('img');
-    photo.style.margin = "10px";
-    photo.style.display = "flex";
-    photo.style.justifyContent = "center";
+    img.className = 'img';
     img.src = "images/me.JPG";
-    img.style.borderRadius = "45%";
     photo.appendChild(img);
     document.body.appendChild(photo);
 
@@ -31,74 +29,24 @@ export function start(){
 
 
     let name = document.createElement('h1');
+    name.className = 'name';
     let info = document.createElement("div");
-    info.style.display = "flex";
-    info.style.flex = "1";
-    info.style.justifyContent = "center";
-    info.style.flexWrap = "wrap";
+    info.className = 'info';
     name.innerHTML = "Дощенко Анна";
-    name.style.color = "#bf0d3d";
-    name.style.display = "flex";
-    name.style.width = "100%";
-    name.style.justifyContent = "center";
-    name.style.margin = "3px";
-    name.style.fontFamily = "Brush Script Std, cursive";
     info.appendChild(name);
     let restInfo = document.createElement("p");
-    restInfo.className = "personal.info";
-    restInfo.style.display = "flex";
-    restInfo.style.justifyContent = "center";
-    restInfo.style.flex = "1";
-    restInfo.style.textAlign = "center";
-    restInfo.style.padding = "5px";
+    restInfo.className = 'rest-info';
     restInfo.innerHTML = "Студентка группы М3307. Член сборной по алтимат-фрисби. </br> В свободное время люблю проводить время с друзьями и заниматься спортом.";
     info.appendChild(restInfo);
-    restInfo.style.color = "#070311";
-    restInfo.style.fontSize = "16pt";
-    restInfo.style.margin = "0";
-    restInfo.style.fontFamily = "Brush Script Std, cursive";
+
     document.body.appendChild(info);
 
 
     let button = document.createElement("div");
+    button.className = 'button';
     let pockemonButton = document.createElement("button");
+    pockemonButton.className = "pockemon-button";
     pockemonButton.innerHTML = "Get pockemon";
-    pockemonButton.style.background = "none";
-    pockemonButton.style.border = "3px solid #070311";
-    pockemonButton.style.fontWeight = "bold";
-    pockemonButton.style.cursor = "pointer";
-    pockemonButton.style.borderRadius = "15px";
-    pockemonButton.style.height = "50px";
-    pockemonButton.style.width = "150px";
-    pockemonButton.style.color = "#070311";
-    pockemonButton.style.fontSize = "12pt";
-    let hover = function(){
-        pockemonButton.style.transitionDuration = "0.3s";
-        pockemonButton.style.backgroundColor = "#bf0d3d";
-        pockemonButton.style.border = "3px solid #bf0d3d";
-        pockemonButton.style.color = "white";
-    };
-    pockemonButton.addEventListener("mouseenter", function () {
-        return hover();
-    });
-    pockemonButton.removeEventListener("mouseenter", function () {
-        return hover();
-    });
-    let leave = function(){
-        pockemonButton.style.transitionDuration = "0.3s";
-        pockemonButton.style.background = "none";
-        pockemonButton.style.border = "3px solid #070311";
-        pockemonButton.style.color = "#070311";
-    };
-    pockemonButton.addEventListener("mouseleave", function () {
-        return leave();
-    });
-    pockemonButton.removeEventListener("mouseleave", function () {
-        return leave();
-    });
-    button.style.margin = "30px";
-    button.style.display = "flex";
-    button.style.justifyContent = "center";
     button.appendChild(pockemonButton);
     document.body.appendChild(button);
 

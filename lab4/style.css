@@ -1,0 +1,115 @@
+.photo{
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
+.img{
+    border-radius: 45%;
+}
+.info{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.name{
+    color: #bf0d3d;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 3px;
+    font-family: Brush Script Std, cursive;
+}
+.rest-info{
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    text-align: center;
+    padding: 5px;
+    color: #070311;
+    font-size: 16pt;
+    margin: 0;
+    font-family: Brush Script Std, cursive;
+}
+.pockemon-button{
+    background: none;
+    border: 3px solid #070311;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 15px;
+    height: 50px;
+    width: 150px;
+    color: #070311;
+    font-size: 12pt;
+}
+.pockemon-button:hover{
+    transition-duration: 0.3s;
+    background-color: #bf0d3d;
+    border: 3px solid #bf0d3d;
+    color: white;
+}
+.button{
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+}
+.pocke-name{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 30pt;
+    color: #6a2bfc;
+    font-family: Brush Script Std, cursive;
+}
+.header{
+    color: #0c013c;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    font-family: Brush Script Std, cursive;
+}
+.div{
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 300px;
+    border: 2px solid #6a2bfc;
+    border-radius: 15px;
+    margin: 10px auto;
+    padding: 5px;
+}
+.ability{
+    display: flex;
+    justify-content: center;
+    color: #6a2bfc;
+    margin: 5px;
+    font-weight: bold;
+    font-size: 14pt;
+    font-family: Brush Script Std, cursive;
+}
+.description{
+    margin: 0;
+    text-align: center;
+    color: #0c013c;
+    font-family: Brush Script Std, cursive;
+}
+.info-button{
+    background: none;
+    border: 3px solid #0c013c;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 15px;
+    height: 50px;
+    width: 150px;
+    color: #0c013c;
+    font-size: 12pt;
+}
+.info-button:hover{
+    transition-duration: 0.3s;
+    background-color: #6a2bfc;
+    border: 3px solid #6a2bfc;
+    color: white;
+}
