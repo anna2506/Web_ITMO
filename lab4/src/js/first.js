@@ -1,6 +1,6 @@
 const second = require('./second');
 
-var start = function(){
+let start = function(){
     if (localStorage.id == 2){
         while (document.body.firstElementChild)
         {
@@ -14,8 +14,8 @@ var start = function(){
     }
     localStorage.id = 1;
     document.body.setAttribute("style", "background: #9477e4; margin: 0; padding: 0");
-    var photo = document.createElement('div');
-    var img = document.createElement('img');
+    let photo = document.createElement('div');
+    let img = document.createElement('img');
     photo.style.margin = "10px";
     photo.style.display = "flex";
     photo.style.justifyContent = "center";
@@ -24,14 +24,14 @@ var start = function(){
     photo.appendChild(img);
     document.body.appendChild(photo);
 
-    var list = document.createElement("li");
-    var ul = document.createElement('ul');
+    const list = document.createElement("li");
+    const ul = document.createElement('ul');
     list.innerHTML = "Дощенко Анна";
     ul.appendChild(list);
 
 
     const name = document.createElement('h1');
-    var info = document.createElement("div");
+    const info = document.createElement("div");
     info.style.display = "flex";
     info.style.flex = "1";
     info.style.justifyContent = "center";
@@ -60,8 +60,8 @@ var start = function(){
     document.body.appendChild(info);
 
 
-    var button = document.createElement("div");
-    var pockemonButton = document.createElement("button");
+    let button = document.createElement("div");
+    let pockemonButton = document.createElement("button");
     pockemonButton.innerHTML = "Get pockemon";
     pockemonButton.style.background = "none";
     pockemonButton.style.border = "3px solid #070311";

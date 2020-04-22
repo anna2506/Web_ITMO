@@ -1,13 +1,13 @@
 const first = require('./first');
 
-var render = function() {
+let render = function() {
     localStorage.id = 2;
     while (document.body.firstElementChild)
     {
         document.body.removeChild(document.body.firstElementChild);
     }
     document.body.setAttribute("style", "background: #02ded3; margin: 0; padding: 0");
-    var name = document.createElement('span');
+    let name = document.createElement('span');
     name.style.display = "flex";
     name.style.justifyContent = "center";
     name.style.padding = "20px";
@@ -15,7 +15,7 @@ var render = function() {
     name.style.fontSize = "30pt";
     name.style.color = "#6a2bfc";
     name.style.fontFamily = "Brush Script Std, cursive";
-    var abilities = document.createElement('div');
+    let abilities = document.createElement('div');
     const header = document.createElement('h1');
     header.style.color = "#0c013c";
     header.style.display = "flex";
@@ -34,9 +34,9 @@ var render = function() {
         for (let i = 0; i < json.abilities.length; i++) {
             console.log(i);
             array.push(json.abilities[i]);
-            abilityName = json.abilities[i].ability.name;
-            abilityURL = json.abilities[i].ability.url;
-            var div = document.createElement('div');
+            let abilityName = json.abilities[i].ability.name;
+            let abilityURL = json.abilities[i].ability.url;
+            let div = document.createElement('div');
             div.style.display = "flex";
             div.style.justifyContent = "center";
             div.style.flex = "1";
@@ -47,7 +47,7 @@ var render = function() {
             div.style.borderRadius = "15px";
             div.style.margin = "10px auto";
             div.style.padding = "5px";
-            var ability = document.createElement('span');
+            let ability = document.createElement('span');
             ability.style.display = "flex";
             ability.style.justifyContent = "center";
             ability.style.color = "#6a2bfc";
@@ -55,7 +55,7 @@ var render = function() {
             ability.style.fontWeight = 'bold';
             ability.style.fontSize = '14pt';
             ability.style.fontFamily = "Brush Script Std, cursive";
-            var description = document.createElement('p');
+            let description = document.createElement('p');
             description.style.margin = "0";
             description.style.textAlign = "center";
             description.style.color = "#0c013c";
@@ -83,8 +83,8 @@ var render = function() {
     abilities.appendChild(header);
     document.body.appendChild(abilities);
 
-    var button = document.createElement("div");
-    var personalInfoButton = document.createElement("button");
+    let button = document.createElement("div");
+    let personalInfoButton = document.createElement("button");
     personalInfoButton.innerHTML = "Get personal Info";
     personalInfoButton.style.background = "none";
     personalInfoButton.style.border = "3px solid #0c013c";
