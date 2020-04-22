@@ -1,12 +1,12 @@
-const second = require('./second');
+import {render} from './second';
 
-let start = function(){
+export function start(){
     if (localStorage.id == 2){
         while (document.body.firstElementChild)
         {
             document.body.removeChild(document.body.firstElementChild);
         }
-        return second.render();
+        return render();
     }
     while (document.body.firstElementChild)
     {
@@ -24,14 +24,14 @@ let start = function(){
     photo.appendChild(img);
     document.body.appendChild(photo);
 
-    const list = document.createElement("li");
-    const ul = document.createElement('ul');
+    let list = document.createElement("li");
+    let ul = document.createElement('ul');
     list.innerHTML = "Дощенко Анна";
     ul.appendChild(list);
 
 
-    const name = document.createElement('h1');
-    const info = document.createElement("div");
+    let name = document.createElement('h1');
+    let info = document.createElement("div");
     info.style.display = "flex";
     info.style.flex = "1";
     info.style.justifyContent = "center";
@@ -72,17 +72,29 @@ let start = function(){
     pockemonButton.style.width = "150px";
     pockemonButton.style.color = "#070311";
     pockemonButton.style.fontSize = "12pt";
-    hover = pockemonButton.addEventListener("mouseenter", function () {
+    let hover = function(){
         pockemonButton.style.transitionDuration = "0.3s";
         pockemonButton.style.backgroundColor = "#bf0d3d";
         pockemonButton.style.border = "3px solid #bf0d3d";
         pockemonButton.style.color = "white";
+    };
+    pockemonButton.addEventListener("mouseenter", function () {
+        return hover();
     });
-    leave = pockemonButton.addEventListener("mouseleave", function () {
+    pockemonButton.removeEventListener("mouseenter", function () {
+        return hover();
+    });
+    let leave = function(){
         pockemonButton.style.transitionDuration = "0.3s";
         pockemonButton.style.background = "none";
         pockemonButton.style.border = "3px solid #070311";
         pockemonButton.style.color = "#070311";
+    };
+    pockemonButton.addEventListener("mouseleave", function () {
+        return leave();
+    });
+    pockemonButton.removeEventListener("mouseleave", function () {
+        return leave();
     });
     button.style.margin = "30px";
     button.style.display = "flex";
@@ -90,15 +102,21 @@ let start = function(){
     button.appendChild(pockemonButton);
     document.body.appendChild(button);
 
-    click = pockemonButton.addEventListener("click", async function () {
-        second.render();
+    let second =  function(){
+        render();
+    };
+
+    pockemonButton.addEventListener("click", async function () {
+        second();
+    });
+    pockemonButton.removeEventListener("click", async function() {
+        second()
     });
 
-};
+}
 
 start();
 
-module.exports.start = start;
 
 
 

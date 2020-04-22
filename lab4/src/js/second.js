@@ -1,6 +1,6 @@
-const first = require('./first');
+import {start} from './first';
 
-let render = function() {
+export function render() {
     localStorage.id = 2;
     while (document.body.firstElementChild)
     {
@@ -16,7 +16,7 @@ let render = function() {
     name.style.color = "#6a2bfc";
     name.style.fontFamily = "Brush Script Std, cursive";
     let abilities = document.createElement('div');
-    const header = document.createElement('h1');
+    let header = document.createElement('h1');
     header.style.color = "#0c013c";
     header.style.display = "flex";
     header.style.justifyContent = "center";
@@ -26,11 +26,11 @@ let render = function() {
 
     async function getPockemon() {
         let id = Math.floor(Math.random() * (808));
-        let url = 'https://pokeapi.co/api/v2/pokemon/' + id.toString() + '/';
+        const url = 'https://pokeapi.co/api/v2/pokemon/' + id.toString() + '/';
         const response = await fetch(url, {method: 'GET'});
         const json = await response.json();
         name.innerHTML = json.name;
-        const array = [];
+        let array = [];
         for (let i = 0; i < json.abilities.length; i++) {
             console.log(i);
             array.push(json.abilities[i]);
@@ -67,7 +67,7 @@ let render = function() {
             async function apiCall(url) {
                 const response = await fetch(url, {method: 'GET'});
                 const json = await response.json();
-                var desr = json.effect_entries[0].effect;
+                let desr = json.effect_entries[0].effect;
                 console.log(desr);
                 description.innerHTML = desr;
                 div.appendChild(description);
@@ -95,30 +95,44 @@ let render = function() {
     personalInfoButton.style.width = "150px";
     personalInfoButton.style.color = "#0c013c";
     personalInfoButton.style.fontSize = "12pt";
-    hover = personalInfoButton.addEventListener("mouseenter", function () {
+    let hover = function(){
         personalInfoButton.style.transitionDuration = "0.3s";
         personalInfoButton.style.backgroundColor = "#6a2bfc";
         personalInfoButton.style.border = "3px solid #6a2bfc";
         personalInfoButton.style.color = "white";
+    };
+    personalInfoButton.addEventListener("mouseenter", function () {
+        return hover();
     });
-    leave = personalInfoButton.addEventListener("mouseleave", function () {
+    personalInfoButton.removeEventListener('mouseenter', function () {
+        return hover();
+    });
+    let leave = function(){
         personalInfoButton.style.transitionDuration = "0.3s";
         personalInfoButton.style.background = "none";
         personalInfoButton.style.border = "3px solid #0c013c";
         personalInfoButton.style.color = "#0c013c";
+    };
+    personalInfoButton.addEventListener("mouseleave", function () {
+        return leave();
+    });
+    personalInfoButton.removeEventListener("mouseleave", function () {
+        return leave();
     });
     button.style.margin = "30px";
     button.style.display = "flex";
     button.style.justifyContent = "center";
     button.appendChild(personalInfoButton);
     document.body.appendChild(button);
-
-    click = personalInfoButton.addEventListener("click", async function () {
+    let click = function(){
         localStorage.id = 1;
-        first.start();
+        start();
+    };
+    personalInfoButton.addEventListener("click", async function () {
+        return click();
     });
+    personalInfoButton.removeEventListener("click", async function() {
+        return click();
+    })
 
-};
-
-
-module.exports.render = render;
+}
