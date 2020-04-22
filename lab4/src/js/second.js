@@ -2,10 +2,12 @@ import {start} from './first';
 
 export function render() {
     localStorage.id = 2;
-    while (document.body.firstElementChild)
+    const content = document.getElementById('root');
+    while (content.firstElementChild)
     {
-        document.body.removeChild(document.body.firstElementChild);
+        content.removeChild(content.firstElementChild);
     }
+    content.className = 'second-page';
     document.body.setAttribute("style", "background: #02ded3; margin: 0; padding: 0");
     let name = document.createElement('span');
     name.className = 'pocke-name';
@@ -13,7 +15,6 @@ export function render() {
     let header = document.createElement('h1');
     header.className = 'header';
     header.innerHTML = "Abilities";
-
     async function getPockemon() {
         let id = Math.floor(Math.random() * (808));
         const url = 'https://pokeapi.co/api/v2/pokemon/' + id.toString() + '/';
@@ -34,8 +35,7 @@ export function render() {
             description.className = 'description';
             ability.innerHTML = abilityName;
             div.appendChild(ability);
-            document.body.appendChild(div);
-
+            content.appendChild(div);
             async function apiCall(url) {
                 const response = await fetch(url, {method: 'GET'});
                 const json = await response.json();
@@ -49,24 +49,23 @@ export function render() {
             abilities.appendChild(div);
         }
     }
-
     getPockemon();
-    document.body.appendChild(name);
+    content.appendChild(name);
     abilities.appendChild(header);
-    document.body.appendChild(abilities);
-
+    content.appendChild(abilities);
     let button = document.createElement("div");
     button.className = 'button';
     let personalInfoButton = document.createElement("button");
     personalInfoButton.className = 'info-button';
     personalInfoButton.innerHTML = "Get personal Info";
     button.appendChild(personalInfoButton);
-    document.body.appendChild(button);
+    content.appendChild(button);
     let click = function(){
         localStorage.id = 1;
         start();
     };
     personalInfoButton.addEventListener("click", async function () {
+        localStorage.id = 1;
         return click();
     });
     personalInfoButton.removeEventListener("click", async function() {
