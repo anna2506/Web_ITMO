@@ -41,7 +41,7 @@
     margin: 0;
     font-family: Brush Script Std, cursive;
 }
-.pockemon-button{
+.first-button{
     background: none;
     border: 3px solid #070311;
     font-weight: bold;
@@ -51,15 +51,16 @@
     width: 150px;
     color: #070311;
     font-size: 12pt;
+    margin: 5px;
 }
-.pockemon-button:hover{
+.first-button:hover{
     transition-duration: 0.3s;
     background-color: #bf0d3d;
     border: 3px solid #bf0d3d;
     color: white;
 }
-.button{
-    margin: 30px;
+.buttons{
+    padding: 5px;
     display: flex;
     justify-content: center;
 }
@@ -106,7 +107,7 @@
     color: #0c013c;
     font-family: Brush Script Std, cursive;
 }
-.info-button{
+.second-button{
     background: none;
     border: 3px solid #0c013c;
     font-weight: bold;
@@ -116,8 +117,9 @@
     width: 150px;
     color: #0c013c;
     font-size: 12pt;
+    margin: 5px;
 }
-.info-button:hover{
+.second-button:hover{
     transition-duration: 0.3s;
     background-color: #6a2bfc;
     border: 3px solid #6a2bfc;
