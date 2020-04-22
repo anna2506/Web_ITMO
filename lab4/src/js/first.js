@@ -15,7 +15,7 @@ export function start(){
     localStorage.id = 1;
     content.className = 'first-page';
     localStorage.id = 1;
-    document.body.setAttribute("style", "background: #9477e4; margin: 0; padding: 0");
+    document.body.className = 'first';
     let photo = document.createElement('div');
     photo.className = 'photo';
     let img = document.createElement('img');

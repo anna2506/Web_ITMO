@@ -8,7 +8,7 @@ export function render() {
         content.removeChild(content.firstElementChild);
     }
     content.className = 'second-page';
-    document.body.setAttribute("style", "background: #02ded3; margin: 0; padding: 0");
+    document.body.className = 'second';
     let name = document.createElement('span');
     name.className = 'pocke-name';
     let abilities = document.createElement('div');

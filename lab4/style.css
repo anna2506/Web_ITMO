@@ -2,7 +2,12 @@
     margin: 0;
     padding: 0;
 }
-
+.first{
+    background: #9477e4;
+}
+.second{
+    background: #02ded3;
+}
 .photo{
     margin: 10px;
     display: flex;
