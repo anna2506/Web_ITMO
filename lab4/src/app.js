@@ -15,13 +15,19 @@ else{
 const pokemonButton = document.getElementById('pockemon-button');
 const infoButton = document.getElementById('info-button');
 
-pokemonButton.onclick = function(){
+function pokemon(){
     second();
     localStorage.id = 2;
-};
+}
 
-infoButton.onclick = function(){
+pokemonButton.onclick = pokemon;
+pokemonButton.removeEventListener('click', pokemon);
+
+function info(){
     start();
     localStorage.id = 1;
-};
+}
+infoButton.onclick = info;
+infoButton.removeEventListener('click', info);
+
 
